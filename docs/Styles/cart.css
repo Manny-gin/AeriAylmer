@@ -1,0 +1,330 @@
+:root {
+    --MainBlue: #518ea7;
+}
+
+.block {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 15% 10% auto;
+    column-gap: 20px;
+    border: solid 3px gray;
+    margin-inline: 20px;
+    padding: 30px;
+    background-color: #d6dfe9;
+
+    h1 {
+        grid-row: 1/2;
+        grid-column: 1/3;
+        margin-block: 0;
+        font-weight: 400;
+    }
+
+    h3 {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        text-align: right;
+        margin-block: 0;
+        padding-right: 1.8vw;
+    }
+
+    /*Shopping cart CSS*/
+    .separator {
+        grid-row: 2/3;
+        grid-column: 1/3;
+        width: 100%;
+        height: 2px;
+        background: var(--MainBlue);
+        margin: 20px 0;
+    }
+
+    .productItem {
+        grid-column: 1/2;
+        grid-row: 3/4;
+
+        width: 100%;
+        border: solid gray 2px;
+        border-top-right-radius: 0.8cm;
+        border-bottom-right-radius: 0.8cm;
+
+        display: grid;
+        grid-template-columns: 215px auto 120px;
+        column-gap: 10px;
+        grid-template-rows: 190px 25px;
+
+        .imageContainer {
+            grid-row: 1/3;
+            width: 95%;
+            height: 95%;
+            padding: 5px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .itemDescription {
+            margin-top: 15px;
+            grid-row: 1/2;
+        }
+
+        .actionButtons {
+            grid-row: 2/3;
+            grid-column: 2/4;
+            display: flex;
+            flex-wrap: nowrap;
+
+            a {
+                margin-right: 30px;
+                color: var(--MainBlue);
+            }
+        }
+
+        .price {
+            padding-top: 20px;
+            padding-right: 20px;
+            text-align: right;
+        }
+
+    }
+}
+
+footer p a {
+    padding-inline-start: 20px;
+}
+
+.checkout {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    align-self: start;
+
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 20px;
+
+    font-size: 1.2em;
+    width: auto;
+
+    div {
+        color: gray;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: medium;
+    }
+
+    #checkout {
+        border: #facf86 solid;
+        background-color: #facf86;
+        border-radius: 1cm;
+        padding: 4px;
+        text-decoration: none;
+        color: #000000;
+    }
+}
+
+/*Ask taz  
+@container card (min-width: 500px) {
+    .productItem {
+        display: grid;
+        grid-template-columns: 215px;
+        grid-template-rows: 190px 25px;
+    }
+} */
+
+@media (max-width: 768px) {
+
+    main .block {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+
+        h1 {
+            grid-row: 1/2;
+            grid-column: 1;
+        }
+
+        h3 {
+            grid-row: 2/3;
+            grid-column: 1;
+        }
+
+        /*Shopping cart CSS*/
+        .separator {
+            grid-row: 2/3;
+            grid-column: 1;
+
+        }
+
+        .productwrap {
+            container-type: inline-size;
+            container-name: card;
+        }
+
+        .productItem {
+            grid-column: 1;
+            grid-row: 4/5;
+
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 215px auto auto;
+            grid-template-rows: 190px 25px;
+            column-gap: 10px;
+
+            .itemDescription {
+                margin-top: 15px;
+                grid-row: 1/2;
+            }
+
+            .actionButtons {
+                grid-row: 2/3;
+                grid-column: 2/4;
+                display: flex;
+                flex-wrap: nowrap;
+
+                a {
+                    margin-right: 30px;
+                    color: var(--MainBlue);
+                }
+            }
+
+            .price {
+                padding-top: 20px;
+                padding-right: 20px;
+                text-align: right;
+            }
+        }
+
+        .checkout {
+            grid-column: 1;
+            grid-row: 3/4;
+            margin-bottom: 20px;
+        }
+    }
+
+
+}
+
+@media (max-width: 565px) {
+    main .block .productItem {
+        display: grid;
+        grid-template-columns: 215px auto;
+        grid-template-rows: 160px 25px auto;
+
+        .itemDescription {
+            grid-row: 1/2;
+        }
+
+        .imageContainer {
+            grid-row: 1/4;
+        }
+
+        .actionButtons {
+            grid-row: 3/4;
+            grid-column: 2/3;
+        }
+
+        .price {
+            grid-row: 2/3;
+            padding-top: 0;
+            padding-right: 30px;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+
+    h3 {
+        display: none;
+    }
+
+    main .block .productItem {
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 200px 60px 30px auto;
+        justify-content: center;
+        border-radius: 0.8cm;
+
+        .imageContainer {
+            grid-row: 1/2;
+            grid-column: 1/2;
+            align-content: center;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: 190px;
+                border-radius: 1cm;
+                
+            }
+        }
+
+        .itemDescription {
+            grid-row: 2/3;
+            grid-column: 1/2;
+        }
+
+        .actionButtons {
+            grid-row: 4/5;
+            grid-column: 1/2;
+        }
+
+        .price {
+            grid-row: 3/4;
+            padding-top: 0;
+            padding-right: 30px;
+        }
+    }
+}
+
+/* Empty Cart CSS ——————————————————————————————————————————————————————————————————————————*/
+
+.emptyblock {
+    padding: 15px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 70% auto;
+    border: gray solid;
+    margin-inline: 25px;
+    background-color: #d6dfe9;
+
+    h1 {
+        grid-row: 1/2;
+    }
+
+    div {
+        grid-row: 2/3;
+        display: flex;
+        flex-wrap: nowrap;
+
+        a {
+            border: #facf86 solid;
+            background-color: #facf86;
+            border-radius: 1cm;
+            padding: 4px;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        #signIn {
+            /*If the user isn't signed in do not display*/
+        }
+
+        #market {
+            margin-inline: 20px;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    #emptyActionButtons {
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        #market {
+            grid-column: 1/2;
+            padding-right: 0;
+        }
+    }
+
+}

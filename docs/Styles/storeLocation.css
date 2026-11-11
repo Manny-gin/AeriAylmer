@@ -1,0 +1,100 @@
+main {
+    margin-inline: 20px;
+
+    display: grid;
+    grid-template-columns: 30vw auto;
+
+    h1 {
+        color: #183d92;
+    }
+
+    .location_container {
+        grid-column: 1/2;
+        display: grid;
+        margin-bottom: 30px;
+        border: solid gray;
+        background-color: #d6dfe9;
+        padding: 5px;
+
+        h2 {
+            color: #183d92;
+            margin: 0;
+        }
+
+        .location_title {
+            h3 {
+                margin: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        .location_description {
+            margin-bottom: 10px
+        }
+
+        .direction_text {
+            .direction_sender {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &:visited {
+                    color: #183d92;
+                }
+            }
+        }
+
+        .opening_hours {
+            .current_day_open {}
+        }
+
+    }
+
+    #mapShow {
+        grid-column: 2/3;
+        grid-row: 2/4;
+        border: solid gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    .separator {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 60px 50vw auto auto;
+
+        h1 {
+            grid-row: 1/2;
+            grid-column: 1;
+        }
+
+        #mapShow {
+            grid-column: 1;
+            grid-row: 2/3;
+            margin-left: 0px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .location_container:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 4/5;
+    }
+
+    .location_container:nth-of-type(2) {
+        grid-column: 1;
+        grid-row: 3/4;
+    }
+}

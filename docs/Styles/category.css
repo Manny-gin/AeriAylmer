@@ -1,0 +1,31 @@
+main {
+
+    .list_boxer {
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: repeat(8, 40px);
+        justify-content: center;
+        gap: 1%;
+
+        div {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+
+            &:hover {
+                background-color: #d6dfe9;
+            }
+
+            a {
+                width: 100%;
+                display: flex;
+                justify-content: right;
+                align-items: center;
+            }
+
+            span {
+                margin-left: auto;
+            }
+        }
+    }
+}
